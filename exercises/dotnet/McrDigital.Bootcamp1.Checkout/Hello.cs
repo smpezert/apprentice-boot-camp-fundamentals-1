@@ -7,6 +7,10 @@ namespace McrDigital.Bootcamp1.Checkout
 {
     public class Hello
     {
-        Console.WriteLine("Hello World!");
+
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
     }
 }
