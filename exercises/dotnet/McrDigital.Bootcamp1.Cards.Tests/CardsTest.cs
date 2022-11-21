@@ -2,6 +2,7 @@ namespace McrDigital.Bootcamp1.Cards.Tests
 {
     using Xunit;
     using McrDigital.Bootcamp1.Cards;
+    using System.Linq;
 
     public class CardsTest
     {
@@ -65,7 +66,7 @@ namespace McrDigital.Bootcamp1.Cards.Tests
                     "queen of spades",
                     "king of spades"
                 },
-                encapsulation.GetCards());
+                encapsulation.GetCards().Select(card => card.ToString()));
         }
     }
 }
