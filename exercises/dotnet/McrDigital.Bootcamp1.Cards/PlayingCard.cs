@@ -7,8 +7,14 @@ namespace McrDigital.Bootcamp1.Cards
 {
     public class PlayingCard
     {
-        public Suit Suit {get; set;}
-        public int FaceValue {get; set;}
+        public PlayingCard(Suit suit, int faceValue)
+        {
+            Suit = suit;
+            FaceValue = faceValue;
+        }
+
+        public Suit Suit {get; private set;}
+        public int FaceValue {get; private set;}
 
         public override string ToString()
         {
