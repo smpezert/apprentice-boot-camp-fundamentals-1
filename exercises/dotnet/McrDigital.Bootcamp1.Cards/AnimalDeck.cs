@@ -3,13 +3,13 @@ namespace McrDigital.Bootcamp1.Cards
     using System;
     using System.Collections.Generic;
 
-    public class AnimalDeck
+    public class AnimalDeck : IDeck
     {
-        private readonly List<AnimalCard> _cards;
+        private readonly List<ICard> _cards;
 
         public AnimalDeck()
         {
-            _cards = new List<AnimalCard>();
+            _cards = new List<ICard>();
             foreach (Animal animal in Enum.GetValues(typeof(Animal)))
             {
                 _cards.Add(new AnimalCard(animal));
@@ -17,7 +17,7 @@ namespace McrDigital.Bootcamp1.Cards
             }
         }
 
-        public AnimalCard Deal()
+        public ICard Deal()
         {
             var card = _cards[0];
             _cards.RemoveAt(0);
