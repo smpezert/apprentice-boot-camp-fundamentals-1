@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace McrDigital.Bootcamp1.Cards
 {
-    public interface ICard
+    public abstract class Card
     {
-        bool Snap(ICard other);
+        public abstract string Value { get; }
 
-        public string Value { get; }
-
+        public abstract bool Snap(Card other);
     }
 }

@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace McrDigital.Bootcamp1.Cards
 {
-    public class PlayingCardDeck :IDeck
+    public class PlayingCardDeck :Deck
     {
         public PlayingCardDeck() 
         {
-            var cards = new List<ICard>();
-            var deck = new int[52][];
+            var cards = new List<Card>();
 
             var suits = Enum.GetValues<Suit>();
 
@@ -24,38 +23,7 @@ namespace McrDigital.Bootcamp1.Cards
                 }
             }
 
-            _cards = cards.ToList();
-        }
-
-        private List<ICard> _cards;
-
-        public IEnumerable<object> GetCards()
-        {
-           return _cards;
-        }
-
-        public ICard Deal()
-        {
-            var card = _cards[0];
-            _cards.RemoveAt(0);
-            return card;
-        }
-
-        string[] IDeck.GetCards()
-        {
-            var result = new string[_cards.Count];
-            for (var index = 0; index < _cards.Count; index++)
-            {
-                var card = _cards[index];
-                result[index] = card.ToString();
-            }
-
-            return result;
-        }
-
-        public void Shuffle()
-        {
-            _cards.KnuthShuffle();
+            Cards = cards.ToList();
         }
     }
 }

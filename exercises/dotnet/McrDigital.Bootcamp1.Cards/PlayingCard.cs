@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace McrDigital.Bootcamp1.Cards
 {
-    public class PlayingCard : ICard
+    public class PlayingCard : Card
     {
         public PlayingCard(Suit suit, int faceValue)
         {
@@ -16,9 +16,9 @@ namespace McrDigital.Bootcamp1.Cards
         public Suit Suit {get; private set;}
         public int FaceValue {get; private set;}
 
-        public string Value => FaceValue.ToString();
+        public override string Value => FaceValue.ToString();
 
-        public bool Snap(ICard other)
+        public override bool Snap(Card other)
         {
             return FaceValue.ToString() == other.Value;
         }
