@@ -18,11 +18,6 @@ namespace McrDigital.Bootcamp1.Cards
 
         public override string Value => FaceValue.ToString();
 
-        public override bool Snap(Card other)
-        {
-            return FaceValue.ToString() == other.Value;
-        }
-
         public override string ToString()
         {
             var facevaluename = string.Empty;

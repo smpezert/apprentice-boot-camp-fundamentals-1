@@ -10,6 +10,9 @@ namespace McrDigital.Bootcamp1.Cards
     {
         public abstract string Value { get; }
 
-        public abstract bool Snap(Card other);
+        public bool Snap(Card other)
+        {
+            return Value == other.Value;
+        }
     }
 }
