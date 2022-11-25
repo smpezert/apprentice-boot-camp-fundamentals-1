@@ -6,8 +6,35 @@ namespace McrDigital.Bootcamp1.Cards
     {
         static void Main(string[] args)
         {
-            var snap = new Snap(new MixedDeck());
+            Console.WriteLine("Please choose the game you want to play of the list:\nAnimal\nSuits\nMixed");
+            var usersInput = Console.ReadLine();
+
+
+            var snap = ChooseGame(usersInput);
+                
             snap.Play();
+        }
+
+        private static Snap ChooseGame(string usersInput)
+        {
+            Snap snap;
+            switch (usersInput)
+            {
+                case "Animal":
+                    snap = new Snap(new AnimalDeck());
+                    break;
+                case "Suits":
+                    snap = new Snap(new PlayingCardDeck());
+                    break;
+                case "Mixed":
+                    snap = new Snap(new MixedDeck());
+                    break;
+                default:
+                    snap = new Snap(new MixedDeck());
+                    break;
+            }
+
+            return snap;
         }
 
         private int _player1Score;
