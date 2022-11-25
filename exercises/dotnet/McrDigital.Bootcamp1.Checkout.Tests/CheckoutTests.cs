@@ -88,6 +88,34 @@ namespace McrDigital.Bootcamp1.Checkout.Tests
         }
 
         [Fact]
+        public void FourC()
+        {
+            var checkout = new Checkout();
+            checkout.Scan("C");
+            checkout.Scan("C");
+            checkout.Scan("C");
+            checkout.Scan("C");
+
+            Assert.Equal(70, checkout.Total);
+        }
+
+        [Fact]
+        public void EightC()
+        {
+            var checkout = new Checkout();
+            checkout.Scan("C");
+            checkout.Scan("C");
+            checkout.Scan("C");
+            checkout.Scan("C");
+            checkout.Scan("C");
+            checkout.Scan("C");
+            checkout.Scan("C");
+            checkout.Scan("C");
+
+            Assert.Equal(140, checkout.Total);
+        }
+
+        [Fact]
         public void Simple()
         {
             var checkout = new Checkout();

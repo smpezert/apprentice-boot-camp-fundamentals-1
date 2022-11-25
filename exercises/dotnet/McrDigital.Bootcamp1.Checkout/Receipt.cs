@@ -6,6 +6,7 @@ namespace McrDigital.Bootcamp1.Checkout
         private int _aCountdown = 3;
         private int _total;
         private int _bCountdown = 2;
+        private int _cCountdown = 4;
 
         public string Text
         {
@@ -46,8 +47,18 @@ namespace McrDigital.Bootcamp1.Checkout
 
         public void ScannedC()
         {
-            this._text = $"{_text}C: 20\n";
-            this._total += 20;
+            _text = $"{_text}C: 20";
+            if (--_cCountdown == 0)
+            {
+                _text = $"{_text} - 10 (4 for 70)";
+                _total += 10;
+            }
+            else
+            {
+                _total += 20;
+            }
+
+            _text = $"{_text}\n";
         }
 
         public void ScannedD()

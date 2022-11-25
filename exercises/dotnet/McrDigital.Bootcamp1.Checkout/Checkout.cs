@@ -5,6 +5,7 @@ namespace McrDigital.Bootcamp1.Checkout
         private int _total;
         private int _numberOfA;
         private int _numberOfB;
+        private int _numberOfC;
         private Receipt _receipt = new Receipt();
 
         public string Receipt
@@ -54,6 +55,14 @@ namespace McrDigital.Bootcamp1.Checkout
                 if (_numberOfB % 2 == 0)
                 {
                     _total -= 15;
+                }
+            }
+            else if ("C".Equals(sku))
+            {
+                _numberOfC++;
+                if (_numberOfC % 4 == 0)
+                {
+                    _total -= 10;
                 }
             }
         }
