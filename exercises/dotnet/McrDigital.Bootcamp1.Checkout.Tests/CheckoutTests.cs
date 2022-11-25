@@ -40,6 +40,19 @@ namespace McrDigital.Bootcamp1.Checkout.Tests
         }
 
         [Fact]
+        public void FourA()
+        {
+            var checkout = new Checkout();
+
+            checkout.Scan("A");
+            checkout.Scan("A");
+            checkout.Scan("A");
+            checkout.Scan("A");
+
+            Assert.Equal(180, checkout.Total);
+        }
+
+        [Fact]
         public void SixA()
         {
             var checkout = new Checkout();
@@ -52,6 +65,24 @@ namespace McrDigital.Bootcamp1.Checkout.Tests
             checkout.Scan("A");
 
             Assert.Equal(260, checkout.Total);
+        }
+
+
+        [Fact]
+        public void EightA()
+        {
+            var checkout = new Checkout();
+
+            checkout.Scan("A");
+            checkout.Scan("A");
+            checkout.Scan("A");
+            checkout.Scan("A");
+            checkout.Scan("A");
+            checkout.Scan("A");
+            checkout.Scan("A");
+            checkout.Scan("A");
+
+            Assert.Equal(360, checkout.Total);
         }
 
         [Fact]

@@ -50,6 +50,14 @@ namespace McrDigital.Bootcamp1.Checkout
                     _total -= 20;
                 }
             }
+            else if ("A".Equals(sku))
+            {
+                _numberOfA++;
+                if (_numberOfA % 4 == 0)
+                {
+                    _total -= 20;
+                }
+            }
             else if ("B".Equals(sku))
             {
                 _numberOfB++;
