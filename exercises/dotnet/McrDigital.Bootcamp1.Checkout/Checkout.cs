@@ -45,17 +45,13 @@ namespace McrDigital.Bootcamp1.Checkout
             if ("A".Equals(sku))
             {
                 _numberOfA++;
-                if (_numberOfA % 3 == 0)
+                if (_numberOfA % 3 == 0) 
                 {
                     _total -= 20;
                 }
-            }
-            else if ("A".Equals(sku))
-            {
-                _numberOfA++;
-                if (_numberOfA % 4 == 0)
+                else if (_numberOfA % 4 == 0)
                 {
-                    _total -= 20;
+                    _total -= 0;
                 }
             }
             else if ("B".Equals(sku))
