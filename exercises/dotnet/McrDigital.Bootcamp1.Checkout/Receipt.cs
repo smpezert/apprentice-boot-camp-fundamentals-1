@@ -4,9 +4,11 @@ namespace McrDigital.Bootcamp1.Checkout
     {
         private string _text = string.Empty;
         private int _aCountdown = 3;
-        private int _total;
         private int _bCountdown = 2;
         private int _cCountdown = 4;
+        private int _dCountdown = 5;
+        private int _total;
+
 
         public string Text
         {
@@ -63,8 +65,18 @@ namespace McrDigital.Bootcamp1.Checkout
 
         public void ScannedD()
         {
-            this._text = $"{_text}D: 15\n";
-            this._total += 15;
+            _text = $"{_text}D: 15";
+            if (--_dCountdown == 0)
+            {
+                _text = $"{_text} - 15 (5 for 60)";
+                _total += 0;
+            }
+            else
+            {
+                _total += 15;
+            }
+
+            _text = $"{_text}\n";
         }
     }
 }

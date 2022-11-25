@@ -2,6 +2,7 @@ namespace McrDigital.Bootcamp1.Checkout.Tests
 {
     using Xunit;
     using McrDigital.Bootcamp1.Checkout;
+    using System.Runtime.Versioning;
 
     public class CheckoutTests
     {
@@ -113,6 +114,38 @@ namespace McrDigital.Bootcamp1.Checkout.Tests
             checkout.Scan("C");
 
             Assert.Equal(140, checkout.Total);
+        }
+
+        [Fact]
+        public void FiveD()
+        {
+            var checkout = new Checkout();
+            checkout.Scan("D");
+            checkout.Scan("D");
+            checkout.Scan("D");
+            checkout.Scan("D");
+            checkout.Scan("D");
+
+            Assert.Equal(60, checkout.Total);
+        }
+
+
+        [Fact]
+        public void TenD()
+        {
+            var checkout = new Checkout();
+            checkout.Scan("D");
+            checkout.Scan("D");
+            checkout.Scan("D");
+            checkout.Scan("D");
+            checkout.Scan("D");
+            checkout.Scan("D");
+            checkout.Scan("D");
+            checkout.Scan("D");
+            checkout.Scan("D");
+            checkout.Scan("D");
+
+            Assert.Equal(120, checkout.Total);
         }
 
         [Fact]
